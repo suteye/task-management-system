@@ -20,7 +20,7 @@ export default function AdminPage() {
             <Settings size={32} />
             การตั้งค่าการจัดการทีม
           </h1>
-          <p className="text-slate-500 mt-2">จัดการการตั้งเซิงทีม เอกสาร และผู้ใช้</p>
+          <p className="text-slate-500 mt-2">จัดการการคู่มือและการจัดการผู้ใช้</p>
         </div>
 
         {/* Tab Navigation */}
@@ -34,7 +34,7 @@ export default function AdminPage() {
             }`}
           >
             <BookOpen size={20} />
-            หนังสือและเอกสาร
+            คู่มือ
           </button>
           <button
             onClick={() => setActiveTab('users')}

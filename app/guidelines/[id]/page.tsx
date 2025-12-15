@@ -78,7 +78,7 @@ export default function GuidelineDetailPage() {
       setLoading(true)
       const response = await fetch(`/api/guidelines/${id}`)
       if (!response.ok) {
-        setError('ไม่พบหนังสือแนะนำนี้')
+        setError('ไม่พบคู่มือแนะนำนี้')
         return
       }
       const data = await response.json()
@@ -92,7 +92,7 @@ export default function GuidelineDetailPage() {
       }
     } catch (err) {
       console.error('Error fetching guideline:', err)
-      setError('ไม่สามารถโหลดหนังสือแนะนำได้')
+      setError('ไม่สามารถโหลดคู่มือได้')
     } finally {
       setLoading(false)
     }
@@ -158,7 +158,7 @@ export default function GuidelineDetailPage() {
       <DashboardLayout>
         <div className="flex flex-col items-center justify-center py-16">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mb-4"></div>
-          <p className="text-slate-500">กำลังโหลดหนังสือแนะนำ...</p>
+          <p className="text-slate-500">กำลังโหลดคู่มือ...</p>
         </div>
       </DashboardLayout>
     )
@@ -168,7 +168,7 @@ export default function GuidelineDetailPage() {
     return (
       <DashboardLayout>
         <div className="text-center py-12">
-          <p className="text-red-600 font-medium mb-4">{error || 'ไม่พบหนังสือแนะนำนี้'}</p>
+          <p className="text-red-600 font-medium mb-4">{error || 'ไม่พบคู่มือนี้'}</p>
           <Link
             href="/guidelines"
             className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
@@ -193,7 +193,7 @@ export default function GuidelineDetailPage() {
           className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors group"
         >
           <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
-          กลับไปที่หนังสือแนะนำ
+          กลับไปที่คู่มือ
         </Link>
 
         {/* Hero Header */}

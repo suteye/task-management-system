@@ -213,8 +213,7 @@ export default function GuidelinesManager() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">หนังสือแนะนำและเอกสาร</h2>
-          <p className="text-slate-500 text-sm mt-1">จัดการหนังสือแช่วคณตภ มาตรฐาน และวิธีประติฉา</p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">คู่มือ</h2>
         </div>
         <button
           onClick={() => setIsCreateModalOpen(true)}
@@ -255,11 +254,11 @@ export default function GuidelinesManager() {
       {/* Guidelines List */}
       {loading ? (
         <div className="text-center py-12">
-          <p className="text-slate-500">กำลังโหลดหนังสือ...</p>
+          <p className="text-slate-500">กำลังโหลดคู่มือ...</p>
         </div>
       ) : guidelines.length === 0 ? (
         <Card className="p-8 text-center">
-          <p className="text-slate-500">ไม่พบหนังสือ</p>
+          <p className="text-slate-500">ไม่พบคู่มือ</p>
         </Card>
       ) : (
         <div className="grid gap-4">
@@ -321,7 +320,7 @@ export default function GuidelinesManager() {
             <div className="p-6">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-bold text-slate-900">
-                  {editingGuideline ? 'แก้ไขหนังสือ' : 'หนังสือใหม่'}
+                  {editingGuideline ? 'แก้ไขคู่มือ' : 'คู่มือใหม่'}
                 </h3>
                 <button onClick={resetForm} className="p-1 hover:bg-slate-100 rounded">
                   <X size={20} />
@@ -330,13 +329,13 @@ export default function GuidelinesManager() {
 
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-900 mb-1">ชื่หนังสือ *</label>
+                  <label className="block text-sm font-medium text-slate-900 mb-1">ชื่อคู่มือ *</label>
                   <input
                     type="text"
                     value={formData.title}
                     onChange={e => setFormData({ ...formData, title: e.target.value })}
                     className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="ชื่หนังสือ"
+                    placeholder="ชื่อคู่มือ"
                   />
                 </div>
 
@@ -359,18 +358,18 @@ export default function GuidelinesManager() {
                   <ContentEditor
                     value={formData.content}
                     onChange={content => setFormData({ ...formData, content })}
-                    placeholder="กระปายเนื้อหาหนังสือของคุณ..."
+                    placeholder="เขียนเนื้อหาคู่มือที่นี่..."
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate-900 mb-1">แท็ก (คั่นด้ายคอมม่า)</label>
+                  <label className="block text-sm font-medium text-slate-900 mb-1">แท็ก (คั่นด้วยคอมม่า)</label>
                   <input
                     type="text"
                     value={formData.tags}
                     onChange={e => setFormData({ ...formData, tags: e.target.value })}
                     className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="เช่น: สำคัญ, การรหัส, กันยา"
+                    placeholder="เช่น: สำคัญ, ภายใน, การพัฒนา"
                   />
                 </div>
 
