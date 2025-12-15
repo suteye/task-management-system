@@ -5,7 +5,7 @@ import { Card } from '@/components/ui/card'
 import { Plus, Trash2, X } from 'lucide-react'
 import { DatabaseUser, UserRole } from '@/types'
 
-const USER_ROLES: UserRole[] = ['dev', 'tl', 'tester', 'section', 'dept_head', 'ba', 'user']
+const USER_ROLES: UserRole[] = ['dev', 'tl', 'tester', 'section', 'dept_head', 'ba', 'user', 'admin']
 
 export default function UserManager() {
   const [users, setUsers] = useState<DatabaseUser[]>([])
