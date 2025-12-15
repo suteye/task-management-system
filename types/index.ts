@@ -9,7 +9,8 @@ export type UserRole =
   | 'section' 
   | 'dept_head' 
   | 'ba' 
-  | 'user';
+  | 'user'
+  | 'admin';
 
 export interface DatabaseUser {
   id: string;
